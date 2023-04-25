@@ -14,7 +14,7 @@ apt-get install -y nodejs
 RUN mkdir /app
 WORKDIR /app
 COPY . /app
-RUN bundle config build.nokogiri --use-system-libraries
+RUN bundle config set force_ruby_platform true
 # PORT設定
 EXPOSE 3000
 EXPOSE 7658
