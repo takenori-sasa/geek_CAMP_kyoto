@@ -44,12 +44,10 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development do
-  gem 'rubocop', require: false
-  gem 'solargraph'
-  # ターミナルでdebugする用
-  gem 'pry-byebug'
-  gem 'pry-rails'
-  # ブラウザでデバッグしやすくなる
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'rubocop', require: false
+  gem 'solargraph'
 end
