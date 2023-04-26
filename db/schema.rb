@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 2023_04_26_025108) do
     t.integer "child_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["child_id"], name: "index_edges_on_child_id"
+    t.index ["parent_id", "child_id"], name: "index_edges_on_parent_id_and_child_id", unique: true
+    t.index ["parent_id"], name: "index_edges_on_parent_id"
   end
 
 end

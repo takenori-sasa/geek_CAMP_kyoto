@@ -6,5 +6,8 @@ class CreateEdges < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_index :edges, :parent_id
+    add_index :edges, :child_id
+    add_index :edges, %i[parent_id child_id], unique: true
   end
 end
