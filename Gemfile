@@ -51,3 +51,5 @@ group :development do
   gem 'rubocop', require: false
   gem 'solargraph'
 end
+gem 'carrierwave'
+gem 'mini_magick'
