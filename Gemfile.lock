@@ -88,6 +88,7 @@ GEM
     diff-lcs (1.5.0)
     e2mmap (0.1.0)
     erubi (1.12.0)
+    exifr (1.3.10)
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -277,6 +278,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   carrierwave
+  exifr
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mini_magick

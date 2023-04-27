@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @spot.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @spot.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @spot.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @spot.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @spot.longitude %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @spot.image.url %>
+</p>
+
+<%= link_to 'Edit', edit_spot_path(@spot) %> |
+<%= link_to 'Back', spots_path %>

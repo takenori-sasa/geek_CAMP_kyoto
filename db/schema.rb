@@ -10,26 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_26_025108) do
+ActiveRecord::Schema.define(version: 2023_04_27_212247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
+    t.string "title", null: false
+    t.string "description", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "edges", force: :cascade do |t|
-    t.integer "parent_id"
-    t.integer "child_id"
+    t.integer "parent_id", null: false
+    t.integer "child_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["child_id"], name: "index_edges_on_child_id"
     t.index ["parent_id", "child_id"], name: "index_edges_on_parent_id_and_child_id", unique: true
     t.index ["parent_id"], name: "index_edges_on_parent_id"
+  end
+
+  create_table "spots", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "description", null: false
+    t.string "address", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.string "image", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

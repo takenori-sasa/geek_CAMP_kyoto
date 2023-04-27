@@ -52,4 +52,5 @@ group :development do
   gem 'solargraph'
 end
 gem 'carrierwave'
+gem 'exifr'
 gem 'mini_magick'
