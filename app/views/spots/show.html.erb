@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @spot.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @spot.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @spot.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @spot.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @spot.longitude %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @spot.image.url %>
+  <%= @spot.image.thumb.url %>
+</p>
+<div class="show">
+  <div class="show__address">
+    <%= @spot.address %>
+  </div>
+  <div class="show__maps" id="show_map" style="height: 320px; width: 400px;"></div>
+</div>
+
+
+<%= javascript_pack_tag 'underscore' %>
+<%= javascript_pack_tag 'googlemap' %>
+<%= link_to 'Edit', edit_spot_path(@spot) %> |
+<%= link_to 'Back', spots_path %>

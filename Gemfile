@@ -51,3 +51,10 @@ group :development do
   gem 'rubocop', require: false
   gem 'solargraph'
 end
+gem 'carrierwave'
+gem 'dotenv-rails'
+gem 'exifr'
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'gon'
+gem 'mini_magick'
