@@ -7757,6 +7757,11 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+vis-network@^9.1.6:
+  version "9.1.6"
+  resolved "https://registry.yarnpkg.com/vis-network/-/vis-network-9.1.6.tgz#943df07e829248943656a2f19a7ec87cc1b707de"
+  integrity sha512-Eiwx1JleAsUqfy4pzcsFngCVlCEdjAtRPB/OwCV7PHBm+o2jtE4IZPcPITAEGUlxvL4Fdw7/lZsfD32dL+IL6g==
+
 vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
