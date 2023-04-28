@@ -1,4 +1,3 @@
-require 'exifr/jpeg'
 class SpotImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -47,10 +46,5 @@ class SpotImageUploader < CarrierWave::Uploader::Base
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
     Time.now.strftime('%Y%m%d%H%M%S') + original_filename + '.jpg' if original_filename.present?
-  end
-  process :exif_info
-
-  def exif_info
-    EXIFR::JPEG.new(file.file)
   end
 end

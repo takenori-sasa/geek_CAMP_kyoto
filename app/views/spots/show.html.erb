@@ -28,7 +28,17 @@
 <p>
   <strong>Image:</strong>
   <%= image_tag @spot.image.url %>
+  <%= @spot.image.thumb.url %>
 </p>
+<div class="show">
+  <div class="show__address">
+    <%= @spot.address %>
+  </div>
+  <div class="show__maps" id="show_map" style="height: 320px; width: 400px;"></div>
+</div>
 
+
+<%= javascript_pack_tag 'underscore' %>
+<%= javascript_pack_tag 'googlemap' %>
 <%= link_to 'Edit', edit_spot_path(@spot) %> |
 <%= link_to 'Back', spots_path %>

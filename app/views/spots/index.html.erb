@@ -23,7 +23,7 @@
         <td><%= spot.address %></td>
         <td><%= spot.latitude %></td>
         <td><%= spot.longitude %></td>
-        <td><%= spot.image %></td>
+        <td><%= spot.image.thumb.url %></td>
         <td><%= link_to 'Show', spot %></td>
         <td><%= link_to 'Edit', edit_spot_path(spot) %></td>
         <td><%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -35,3 +35,35 @@
 <br>
 
 <%= link_to 'New Spot', new_spot_path %>
+<script type="text/javascript">
+let map;
+let geocoder;
+let marker = []; // マーカーを複数表示させたいので、配列化
+let infoWindow = []; // 吹き出しを複数表示させたいので、配列化
+const spots = gon.spots; // コントローラーで定義したインスタンス変数を変数に代入
+
+function initMap() {
+  // geocoderを初期化
+  geocoder = new google.maps.Geocoder();
+  // mapの初期位置設定
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat:34.985137, lng:135.757452 },
+    zoom: 15,
+  });
+}
+
+// function codeAddress() {
+//   // 入力を取得
+//   let inputAddress = document.getElementById("address").value;
+//   // geocodingしたあとmapを移動
+// }
+</script>
+   <script async defer
+             src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_KEY'] %>&callback=initMap">
+   </script>
+   <style type="text/css">
+     #map { height: 200px;
+           width: 70%;}
+   </style>
+
+   <div id="map"></div>

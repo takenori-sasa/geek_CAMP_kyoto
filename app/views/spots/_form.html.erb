@@ -22,11 +22,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
     <%= form.label :latitude %>
     <%= form.text_field :latitude %>
   </div>
@@ -37,10 +32,19 @@
   </div>
 
   <div class="field">
+    <%= image_tag(@spot.image.url) if @spot.image.present? %>
     <%= form.label :image %>
     <%= form.file_field :image ,accept: 'image/jpeg,image/gif,image/png' %>
-    <%= form.hidden_field :board_image_cache %>
+    <%= form.hidden_field :image_cache %>
   </div>
+
+  <div class="field">
+    <%= form.label :address, "住所", class: 'spot__title' %>
+    <%= form.text_field :address, placeholder: "住所を入力", id: "address", class: 'spot__text' %>
+    <input onclick="codeAddress()" type="button" value="search"></input>
+    <div class="map" id="map" style="height: 320px; width: 640px;"></div>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>
