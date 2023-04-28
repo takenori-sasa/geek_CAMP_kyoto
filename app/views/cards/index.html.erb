@@ -7,6 +7,8 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
+      <th>Parents</th>
+      <th>Children</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +18,8 @@
       <tr>
         <td><%= card.title %></td>
         <td><%= card.description %></td>
+        <td><%= card.parents.ids.join(',') %></td>
+        <td><%= card.children.ids.join(',') %></td>
         <td><%= link_to 'Show', card %></td>
         <td><%= link_to 'Edit', edit_card_path(card) %></td>
         <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +30,8 @@
 
 <br>
 
+<%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" %>
+<%= javascript_include_tag 'https://unpkg.com/vis-network/standalone/umd/vis-network.min.js' %>
+<div id="network"></div>
+<%= javascript_pack_tag 'vis' %>
 <%= link_to 'New Card', new_card_path %>
