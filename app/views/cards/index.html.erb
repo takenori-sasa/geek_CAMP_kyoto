@@ -30,8 +30,5 @@
 
 <br>
 
-<%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" %>
-<%= javascript_include_tag 'https://unpkg.com/vis-network/standalone/umd/vis-network.min.js' %>
-<div id="network"></div>
-<%= javascript_pack_tag 'vis' %>
 <%= link_to 'New Card', new_card_path %>
+<%= render 'vis' %>
