@@ -1,44 +1,46 @@
 <p id="notice"><%= notice %></p>
+<div class='container row'>
+  <div class='col-6'>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Attribute</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Title</th>
+          <%= tag.td @spot.title %>
+        </tr>
 
-<p>
-  <strong>Title:</strong>
-  <%= @spot.title %>
-</p>
+        <tr>
+          <th scope="row">Description</th>
+          <%= tag.td @spot.description %>
+        </tr>
 
-<p>
-  <strong>Description:</strong>
-  <%= @spot.description %>
-</p>
+        <tr>
+          <th scope="row">Address</th>
+          <%= tag.td @spot.address %>
+        </tr>
 
-<p>
-  <strong>Address:</strong>
-  <%= @spot.address %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @spot.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @spot.longitude %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @spot.image.url %>
-  <%= @spot.image.thumb.url %>
-</p>
-<div class="show">
-  <div class="show__address">
-    <%= @spot.address %>
+        <tr>
+          <th scope="row">Latitude</th>
+          <%= tag.td @spot.latitude %>
+        </tr>
+        <tr>
+          <th scope="row">Longitude</th>
+          <%= tag.td @spot.longitude %>
+        </tr>
+        <tr>
+          <th scope="row">Image</th>
+          <td><%= image_tag '/uploads/photos/thumb_20230429111650fixture79.jpg.jpg' %></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div class="show__maps" id="show_map" style="height: 320px; width: 400px;"></div>
 </div>
 
 
-<%= javascript_pack_tag 'underscore' %>
-<%= javascript_pack_tag 'googlemap' %>
 <%= link_to 'Edit', edit_spot_path(@spot) %> |
 <%= link_to 'Back', spots_path %>
