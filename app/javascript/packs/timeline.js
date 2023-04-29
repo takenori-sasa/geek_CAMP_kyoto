@@ -8,7 +8,8 @@ for (let i = 0; i < spots.length; i++) {
   itemset.push({
     id: spots[i].id,
     content: spots[i].title,
-    start: new Date(spots[i].updated_at),
+    start: new Date(spots[i].taken_at),
+    image:spots[i].image
   });
 }
 var items = new vis.DataSet(itemset);

@@ -27,4 +27,4 @@ yarn-debug.log*
 .yarn-integrity
 /public/uploads
 /photosignore
-/db/seed.rb
+db/seed.rb
