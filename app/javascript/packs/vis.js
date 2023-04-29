@@ -3,7 +3,7 @@ const gedges = gon.edges;
 
 var nodeset = [];
 for (let i = 0; i < gcards.length; i++) {
-  nodeset.push({ id: gcards[i].id, label: gcards[i].title });
+  nodeset.push({ id: gcards[i].id, label: gcards[i].description });
 }
 var nodes = new vis.DataSet(nodeset);
 var edgeset = [];
